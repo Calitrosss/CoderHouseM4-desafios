@@ -47,7 +47,7 @@ class ProductManager {
 
     this.products.push(newProduct);
 
-    console.log(`Success: Code "${product.code}" added`);
+    console.log(`Success: Code "${newProduct.code}" added`);
   }
 }
 
