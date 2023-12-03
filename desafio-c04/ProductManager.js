@@ -5,11 +5,13 @@ class ProductManager {
     this.filePath = filePath;
   }
 
+  static #configFile = "./desafio-c04/config.json";
+
   async #getLastId() {
     try {
-      const productsDb = await fs.promises.readFile(this.filePath, "utf-8");
-      const productsDbObj = JSON.parse(productsDb);
-      return productsDbObj.lastId;
+      const configFile = await fs.promises.readFile(ProductManager.#configFile, "utf-8");
+      const configFileObj = JSON.parse(configFile);
+      return configFileObj.lastId;
     } catch (error) {
       console.error(`Error getLastId(): ${error}`);
       return 0;
@@ -20,7 +22,7 @@ class ProductManager {
     try {
       const productsDb = await fs.promises.readFile(this.filePath, "utf-8");
       const productsDbObj = JSON.parse(productsDb);
-      return productsDbObj.products;
+      return productsDbObj;
     } catch (error) {
       console.error(`Error getProducts(): ${error}`);
       return [];
@@ -78,9 +80,14 @@ class ProductManager {
       const products = await this.getProducts();
       products.push(newProduct);
 
-      const updateDbObj = { lastId, products };
+      const updateConfigFileObj = { lastId };
 
-      await fs.promises.writeFile(this.filePath, JSON.stringify(updateDbObj), "utf-8");
+      await fs.promises.writeFile(
+        ProductManager.#configFile,
+        JSON.stringify(updateConfigFileObj),
+        "utf-8"
+      );
+      await fs.promises.writeFile(this.filePath, JSON.stringify(products), "utf-8");
 
       console.log(`Success: Code "${newProduct.code}" added`);
     } catch (error) {
@@ -110,10 +117,7 @@ class ProductManager {
       product.code = code;
       product.stock = stock;
 
-      const lastId = await this.#getLastId();
-      const updateDbObj = { lastId, products };
-
-      await fs.promises.writeFile(this.filePath, JSON.stringify(updateDbObj), "utf-8");
+      await fs.promises.writeFile(this.filePath, JSON.stringify(products), "utf-8");
 
       console.log(`Success: Product ID "${product.id}" updated`);
     } catch (error) {
@@ -129,10 +133,7 @@ class ProductManager {
       const products = await this.getProducts();
       const newProducts = products.filter((p) => p.id !== id);
 
-      const lastId = await this.#getLastId();
-      const updateDbObj = { lastId, products: newProducts };
-
-      await fs.promises.writeFile(this.filePath, JSON.stringify(updateDbObj), "utf-8");
+      await fs.promises.writeFile(this.filePath, JSON.stringify(newProducts), "utf-8");
 
       console.log(`Success: Product ID "${id}" deleted`);
     } catch (error) {
