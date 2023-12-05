@@ -35,11 +35,12 @@ export default class ProductManager {
       const products = await this.getProducts();
       const product = products.find((p) => p.id === id);
 
-      if (!product) throw `Error: Id "${id}" Not found`;
+      if (!product) throw `Product Id '${id}' Not found`;
 
       return product;
     } catch (error) {
       console.error(`Error getProductById(): ${error}`);
+      return { error: error };
     }
   }
 
