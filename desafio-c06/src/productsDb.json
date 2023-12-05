@@ -1,0 +1,92 @@
+[
+  {
+    "id": "1",
+    "title": "iPhone 12 Pro Max",
+    "description": "2020",
+    "price": "1099",
+    "thumbnail": "https://example.com/iphone12promax.jpg",
+    "code": "ABC123",
+    "stock": "20"
+  },
+  {
+    "id": "2",
+    "title": "Samsung Galaxy S21 Ultra",
+    "description": "2021",
+    "price": "1199",
+    "thumbnail": "https://example.com/galaxys21ultra.jpg",
+    "code": "DEF456",
+    "stock": "15"
+  },
+  {
+    "id": "3",
+    "title": "Google Pixel 5",
+    "description": "2020",
+    "price": "699",
+    "thumbnail": "https://example.com/pixel5.jpg",
+    "code": "GHI789",
+    "stock": "10"
+  },
+  {
+    "id": "4",
+    "title": "OnePlus 9 Pro",
+    "description": "2021",
+    "price": "969",
+    "thumbnail": "https://example.com/oneplus9pro.jpg",
+    "code": "JKL012",
+    "stock": "18"
+  },
+  {
+    "id": "5",
+    "title": "Sony Xperia 1 III",
+    "description": "2021",
+    "price": "1299",
+    "thumbnail": "https://example.com/xperia1iii.jpg",
+    "code": "MNO345",
+    "stock": "12"
+  },
+  {
+    "id": "6",
+    "title": "Huawei P40 Pro",
+    "description": "2020",
+    "price": "899",
+    "thumbnail": "https://example.com/p40pro.jpg",
+    "code": "PQR678",
+    "stock": "9"
+  },
+  {
+    "id": "7",
+    "title": "Xiaomi Mi 11 Ultra",
+    "description": "2021",
+    "price": "1199",
+    "thumbnail": "https://example.com/mi11ultra.jpg",
+    "code": "STU901",
+    "stock": "14"
+  },
+  {
+    "id": "8",
+    "title": "LG V60 ThinQ 5G",
+    "description": "2020",
+    "price": "799",
+    "thumbnail": "https://example.com/v60thinq5g.jpg",
+    "code": "VWX234",
+    "stock": "7"
+  },
+  {
+    "id": "9",
+    "title": "Motorola Edge+",
+    "description": "2020",
+    "price": "999",
+    "thumbnail": "https://example.com/edgeplus.jpg",
+    "code": "YZA567",
+    "stock": "11"
+  },
+  {
+    "id": "10",
+    "title": "Nokia 9 PureView",
+    "description": "2019",
+    "price": "699",
+    "thumbnail": "https://example.com/nokia9pureview.jpg",
+    "code": "BCD890",
+    "stock": "6"
+  }
+]
