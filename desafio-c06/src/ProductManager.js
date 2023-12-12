@@ -19,10 +19,13 @@ export default class ProductManager {
     }
   }
 
-  async getProducts() {
+  async getProducts(limit) {
     try {
       const productsDb = await fs.promises.readFile(`${this.filePath}/${this.fileName}`, "utf-8");
       const productsDbObj = JSON.parse(productsDb);
+
+      if (limit) return productsDbObj.slice(0, +limit);
+
       return productsDbObj;
     } catch (error) {
       console.error(`Error getProducts(): ${error}`);
